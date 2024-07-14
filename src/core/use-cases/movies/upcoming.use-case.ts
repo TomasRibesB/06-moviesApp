@@ -3,12 +3,22 @@ import { MovieDBMoviesRespone } from "../../../infrastructure/interfaces/movie-d
 import { MovieMapper } from "../../../infrastructure/mappers/movie.mapper";
 import type { Movie } from "../../entities/movie.entity";
 
+interface Options {
+    page?: number;
+    limit?: number;
+}
 
-export const moviesUpcomingUseCase = async (fetcher: HttpAdapter): Promise<Movie[]> => {
+export const moviesUpcomingUseCase = async (fetcher: HttpAdapter, options?:Options): Promise<Movie[]> => {
 
     try {
 
-        const Upcoming = await fetcher.get<MovieDBMoviesRespone>('/upcoming');
+        const Upcoming = await fetcher.get<MovieDBMoviesRespone>('/upcoming',
+            {
+                params: {
+                    page: options?.page || 1
+                }
+            }
+        );
 
         return Upcoming.results.map(MovieMapper.fromMovieDBResponseToEntity);
 
