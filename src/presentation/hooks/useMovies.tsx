@@ -50,8 +50,6 @@ export const useMovies = () => {
 
         setIsLoading(false)
 
-        console.log(isLoading)
-
     }
 
     return {
