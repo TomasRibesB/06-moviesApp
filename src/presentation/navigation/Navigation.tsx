@@ -4,7 +4,7 @@ import { DetailsScreen } from '../screens/details/DetailsScreen';
 
 export type RootStackParams = {
     Home: undefined;
-    Details: undefined;
+    Details: { movieId: number };
 }
 
 
