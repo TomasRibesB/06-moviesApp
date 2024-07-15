@@ -18,7 +18,7 @@ export const MovieDetails = ({ movie, cast }: Props) => {
 
         <>
             <View style={{ marginHorizontal: 20 }}>
-                <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+                <View style={{ flexDirection: 'row' }}>
                     <Text>{movie.rating}</Text>
 
                     <Text
