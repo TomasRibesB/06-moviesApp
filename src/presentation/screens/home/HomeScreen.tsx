@@ -14,7 +14,7 @@ export const HomeScreen = () => {
     if (isLoading) {
         return (
 
-            <Text>Loading...</Text>
+            <Text>Cargando...</Text>
 
         )
     }
